@@ -152,7 +152,7 @@
   --color-base-background: @base;
   --color-base-background-mobile: @base;
   --color-url-font: @accent;
-  --color-url-visited-font: @accent;
+  --color-url-visited-font: darken(@accent, 15%); /// colour of visited URLs
   /// Header Colors
   --color-header-background: @mantle;
   --color-header-border: @mantle;
@@ -160,9 +160,10 @@
   --color-footer-background: @mantle;
   --color-footer-border: @mantle;
   /// Sidebar Colors
-  --color-sidebar-border: @surface2;
+  // --color-sidebar-border: @surface2;
+  --color-sidebar-border: @base;
   --color-sidebar-font: @text;
-  --color-sidebar-background: @base;
+  --color-sidebar-background: @mantle;
   /// BackToTop Colors
   --color-backtotop-font: @subtext1;
   --color-backtotop-border: @surface0;
@@ -205,8 +206,8 @@
   --color-result-vim-arrow: @accent;
   --color-result-description-highlight-font: @text;
   --color-result-link-font: @accent;
-  --color-result-link-font-highlight: @accent;
-  --color-result-link-visited-font: @accent;
+  --color-result-link-font-highlight: @accent; /// colour of text that matches with search query
+  --color-result-link-visited-font: darken(@accent, 15%); /// colour of visited result URLs
   --color-result-publishdate-font: @surface2;
   --color-result-engines-font: @surface2;
   --color-result-search-url-border: @surface2;
@@ -264,11 +265,11 @@
   }
 }
 
-// Dark Theme by preferences
+/// Dark Theme by preferences
 :root.theme-dark {
   .dark-themes();
 
-  // Catppuccin tweaks
+  /// Catppuccin tweaks
   #search_logo svg :not([fill="none"]) {
     fill: @accent;
   }
@@ -277,15 +278,15 @@
     stroke: @accent;
   }
 
-  article.result {
-    // background-color: var(--color-result-background);
-    border-radius: 0.75em;
-    padding: 0.75em;
-    margin: 0.5em;
+  /// Other tweaks
+  .infobox {
+    background-color: var(--color-sidebar-background);
+    line-height: 1.6;
   }
 
-  article.category-images {
-    padding-bottom: 4em;
+  /// make text that matches with search query display in bold
+  .highlight {
+    font-weight: bold;
   }
 }
 
