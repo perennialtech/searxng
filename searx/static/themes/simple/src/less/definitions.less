@@ -164,6 +164,7 @@
   --color-sidebar-border: @base;
   --color-sidebar-font: @text;
   --color-sidebar-background: @mantle;
+  --color-sidebar-title-font: @subtext0; // custom definition for sidebar title
   /// BackToTop Colors
   --color-backtotop-font: @subtext1;
   --color-backtotop-border: @surface0;
@@ -278,11 +279,15 @@
     stroke: @accent;
   }
 
-  /// Other tweaks
-  .infobox {
-    background-color: var(--color-sidebar-background);
-    line-height: 1.6;
-  }
+  //   /// Other tweaks
+  //   #suggestions,
+  //   #infoboxes {
+  //     background-color: var(--color-sidebar-background);
+
+  //     .infobox {
+  //       line-height: 1.6;
+  //     }
+  //   }
 
   /// make text that matches with search query display in bold
   .highlight {
